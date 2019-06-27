@@ -1,4 +1,4 @@
-# aegis-ui
+# aegis-ui-desktop
 
 > 基于 Vue 的桌面端组件库 aegis-ui-desktop， 扩展自ant-design-vue
 

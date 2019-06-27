@@ -9,6 +9,8 @@ build/*.js.map
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+api.config.js
 
 # Editor directories and files
 .idea
