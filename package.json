@@ -16,6 +16,7 @@
     "remove": "node node_modules/aegis-ui-tools/src/remove.js && npm run docs",
     "publish": "npm run docs"
   },
+  "repository": "https://github.com/wuhao000/aegis-ui-desktop.git",
   "files": [
     "dist",
     "packages",
@@ -24,9 +25,6 @@
     "README.md",
     "types"
   ],
-  "publishConfig": {
-    "registry": "http://nexus.aegis-info.com/repository/npm-aegis/"
-  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}

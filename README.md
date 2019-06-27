@@ -1,18 +1,26 @@
 # aegis-ui
 
-> 基于 Vue 私用组件库 aegis-ui
+> 基于 Vue 的桌面端组件库 aegis-ui-desktop， 扩展自ant-design-vue
 
 ## 安装
 
 ``` 
- npm install aegis-ui -S
+ npm install aegis-ui-desktop -S
 ```
 ## 使用
+
+使用之前必须通过cdn引入ant-design-vue, ant-design-vue官方并未提供cdn，此cdn是公司的cdn
+```html
+<link rel="stylesheet" href="https://public-file.aegis-info.com/ant-design-vue/1.3.9/antd.min.css">
+<script src="https://public-file.aegis-info.com/ant-design-vue/1.3.9/antd.min.js"></script>
+<script src="https://public-file.aegis-info.com/ant-design/icons/2.0.0/aut-design-icons.js"></script>
+```
+
 
 ### 完整引入
 
 ``` 
-import AegisUI from 'aegis-ui'
+import AegisUI from 'aegis-ui-desktop'
 Vue.use(AegisUI)
 ```
 
@@ -34,11 +42,11 @@ module.exports = {
     [
       'import',
       {
-        libraryName: 'ant-design-vue',
+        libraryName: 'aegis-ui-desktop',
         libraryDirectory: 'es',
         style: true
       },
-      'ant-design-vue'
+      'aegis-ui-desktop'
     ]
   ]
 };
@@ -47,10 +55,10 @@ module.exports = {
 引入组件
 
 ```
-import { Alert } from "aegis-ui";
+import { DAlert } from "aegis-ui-desktop";
 @Component({
   components: {
-    Alert
+    DAlert
   }
 })
 ```
