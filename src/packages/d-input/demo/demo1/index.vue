@@ -5,11 +5,10 @@
       <d-input v-model="form.keywords"
                class="search-keywords"
                placeholder="请输入关键词进行检索"
-               @keydown.enter.native.stop.prevent="loadData"/>
+               @keydown.enter="loadData"/>
     </d-form-item>
     <d-form :model="form"
             :rules="rules">
-
     </d-form>
     <d-input-search @search="searchClicked">
       <div slot="enterButton">
@@ -63,7 +62,8 @@
     public blur() {
     }
 
-    public loadData() {
+    public loadData(e) {
+      this.$message.info('enter pressed');
     }
 
     public searchClicked() {

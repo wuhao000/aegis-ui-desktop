@@ -143,12 +143,12 @@ export default class PureInputComponent extends mixins(Emitter) {
     }
   }
 
-  public handleKeydown() {
-    this.$emit('keydown');
+  public handleKeydown(...margs) {
+    this.$emit('keydown', ...margs);
   }
 
-  public handleKeyup() {
-    this.$emit('keyup');
+  public handleKeyup(...margs) {
+    this.$emit('keyup', ...margs);
   }
 
   public onInput(value) {

@@ -49,6 +49,8 @@ export default class DSelect extends OptionsBasedComponent {
   public defaultOptionLabel: string;
   @Prop()
   public defaultOptionValue: any;
+  @Prop({type: Number, default: 300})
+  public searchDebounceInterval: any;
 
   @Provide('selectStore')
   public store = {
@@ -87,11 +89,15 @@ export default class DSelect extends OptionsBasedComponent {
   }
 
   public onFilterOption(inputValue: string, option: VNode) {
+    const input = inputValue.toLowerCase();
     const text = getNodeText(option);
     if (!this.filter && text) {
-      return text.toLowerCase().includes(inputValue);
+      return text.toLowerCase().includes(input);
     } else if (this.filter) {
-      return this.filter(inputValue, option);
+      if (this.options) {
+        return this.filter(inputValue, option.data.props);
+      }
+      return this.filter(inputValue, Object.assign({text}, option.componentOptions.propsData));
     }
     return true;
   }

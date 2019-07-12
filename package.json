@@ -1,6 +1,6 @@
 {
   "name": "aegis-ui-desktop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 Vue 私用组件库, 扩展自ant-design-vue",
   "main": "src/packages/index.ts",
   "keyword": "aegisUI aegis-UI aegisui aegis-UI",

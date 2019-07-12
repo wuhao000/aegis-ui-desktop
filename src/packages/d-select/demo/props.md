@@ -10,4 +10,5 @@ notFoundContent|当下拉列表为空时显示的内容|string|
 options|选项数据|any[]|
 placeholder|占位提示信息|string|
 searchable|是否支持选项搜索|boolean|
+searchDebounceInterval||any|300
 valueProperty|选项对象中作为值的属性名称|string \| ((option) => any)|

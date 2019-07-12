@@ -17,11 +17,29 @@
                 v-model="value8"
                 :options="['选项1', '选项2']"></d-select>
     </d-form-item>
+    <d-form-item label="自定义简单选项搜索">
+      <d-select searchable
+                v-model="value8"
+                label-property="name"
+                value-property="id"
+                :filter="filter"
+                :options="options5"></d-select>
+    </d-form-item>
     <d-form-item label="可搜索的(自定义选项)">
       <d-select searchable
                 v-model="value2"
                 placeholder="请选择"
                 style="min-width:100px;">
+        <d-select-option value="1">abc</d-select-option>
+        <d-select-option value="2">def</d-select-option>
+      </d-select>
+    </d-form-item>
+    <d-form-item label="自定义选项自定义搜索">
+      <d-select searchable
+                v-model="value2"
+                placeholder="请选择"
+                style="min-width:100px;"
+                :filter="filter2">
         <d-select-option value="1">abc</d-select-option>
         <d-select-option value="2">def</d-select-option>
       </d-select>
@@ -134,6 +152,9 @@
 
     public options3 = [];
     public options4 = [];
+    public options5 = [{id: 1, name: 'a', description: 'b'}, {
+      id: 2, name: 'c', description: 'd'
+    }];
 
     public value1 = null;
     public value2 = null;
@@ -170,6 +191,10 @@
     }
 
     public filter(input, option) {
+      return option.name.includes(input) || option.description.includes(input);
+    }
+
+    public filter2(input, option) {
       console.log(input);
       console.log(option);
       return true;

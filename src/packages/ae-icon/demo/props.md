@@ -4,7 +4,7 @@ color||string|
 component||any|
 mobile||boolean|false
 rotate||number|
-size||'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl'|
+size||'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl' \| number|
 spin|是否有旋转动画|boolean|false
 style|设置图标的样式，例如 fontSize 和 color|object|
 theme||'filled' \| 'outlined' \| 'twoTone'|

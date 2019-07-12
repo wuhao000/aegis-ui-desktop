@@ -44,12 +44,6 @@ export default {
       children: desktopComponent
     },
     {
-      path: '/mobile-components',
-      name: '移动组件',
-      component: () => import('@/components/components.vue'),
-      children: mobileComponent
-    },
-    {
       path: '/tools',
       name: '工具',
       component: () => import('@/components/components.vue'),

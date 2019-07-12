@@ -25,6 +25,12 @@ module.exports = {
   },
   runtimeCompiler: false,
   configureWebpack: (config) => {
+    config.entry = {
+      app: [
+        './src/main.ts'
+      ],
+      icon: ['./src/packages/ae-icon/index.ts']
+    };
     if (config.devServer) {
       config.devServer.port = 8021;
     } else {
