@@ -1,6 +1,6 @@
-import Pagination from '../d-pagination/locale/zh_CN';
-import TimePicker from '../d-time-picker/locale/zh_CN';
-import Calendar from '../d-calendar/locale/zh_CN';
+import Pagination from 'ant-design-vue/es/vc-pagination/locale/zh_CN';
+import TimePicker from 'ant-design-vue/es/time-picker/locale/zh_CN';
+import Calendar from 'ant-design-vue/es/calendar/locale/zh_CN';
 
 export default {
   locale: 'zh-cn',

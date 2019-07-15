@@ -1,6 +1,6 @@
 {
   "name": "aegis-ui-desktop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于 Vue 私用组件库, 扩展自ant-design-vue",
   "main": "src/packages/index.ts",
   "keyword": "aegisUI aegis-UI aegisui aegis-UI",
@@ -35,6 +35,7 @@
     "@ant-design/icons-vue": "^1.0.1",
     "@types/axios": "^0.14.0",
     "aegis-ui-tools": "^1.0.4",
+    "ant-design-vue": "^1.3.10",
     "async-validator": "^1.11.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "browser-sync": "^2.26.3",

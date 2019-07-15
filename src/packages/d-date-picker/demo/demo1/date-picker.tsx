@@ -1,17 +1,15 @@
-import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
+import Vue from 'vue';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
-import BaseFormComponent from '../../../mixins/base-input-component';
-import RangePicker from './range-picker';
+import locale from 'ant-design-vue/lib/date-picker/locale/zh_CN';
 
 const DatePicker = window.antd.DatePicker;
 @Component({
   name: 'DDatePicker'
 })
-export default class DDatePicker extends BaseFormComponent {
-  public static RangePicker = RangePicker;
-  @Prop({type: Object, default: () => locale})
-  public locale: object;
+export default class DDatePicker extends Vue {
+  @Prop({type: Object, default: () => locale.lang})
+  public locale: any;
   @Prop({type: String, default: 'zh'})
   public localeCode: string;
   @Prop({type: Boolean, default: false})
@@ -19,6 +17,7 @@ export default class DDatePicker extends BaseFormComponent {
   @Prop({type: String, default: 'date'})
   public mode: 'datetime' | 'date' | 'month' | 'week';
   public static install: (Vue) => void;
+
 
   get shouldShowTime() {
     return this.mode === 'datetime';
@@ -85,6 +84,12 @@ export default class DDatePicker extends BaseFormComponent {
         this['stateValue'] = convertValue;
       }
     }
+  }
+
+  public render() {
+    const value = moment();
+    return <DatePicker value={value}
+                       showTime={this.shouldShowTime}/>;
   }
 
 }

@@ -10,10 +10,10 @@ export default class BaseFormComponent extends mixins(PureInputComponent, FormCo
 
   get props() {
     return {
-      ...this.getSlotProps(),
       ...this.$attrs,
       ...this.$props,
       ...this.getProps(),
+      ...this.getSlotProps(),
       disabled: this.isDisabled,
       readOnly: this.isReadonly,
       visible: this.stateValue,

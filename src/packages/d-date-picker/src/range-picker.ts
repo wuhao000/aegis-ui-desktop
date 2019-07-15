@@ -1,7 +1,7 @@
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import BaseFormComponent from '../../../mixins/base-input-component';
-import locale from '../locale/zh_CN';
+import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 
 const DatePicker = window.antd.DatePicker;
 @Component({
