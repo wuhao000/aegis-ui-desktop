@@ -2,4 +2,5 @@
 ------ | ------ | ------ | ---
 defaultColor||string|
 disabled||boolean|false
+prefixCls||string|
 value||string|
