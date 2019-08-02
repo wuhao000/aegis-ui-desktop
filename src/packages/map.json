@@ -165,10 +165,10 @@
     "name": "d-popover",
     "chineseName": "气泡卡片"
   },
-  "d-province": {
+  "d-area": {
     "type": "component",
     "componentType": "desktop",
-    "name": "d-province",
+    "name": "d-area",
     "chineseName": "省市区联动"
   },
   "d-radio": {

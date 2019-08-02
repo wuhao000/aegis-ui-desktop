@@ -40,12 +40,12 @@
   import Anchor from '@/packages/d-anchor';
   import Vue from 'vue';
   import Component from 'vue-class-component';
-  import DProvince from '@/packages/d-area';
+  import DArea from '@/packages/d-area';
   import title from '../../packages/d-area/demo/README.md';
   import props from '../../packages/d-area/demo/props.md';
 
   Vue.use(Anchor);
-  Vue.use(DProvince);
+  Vue.use(DArea);
   @Component({
     name: 'ComponentDemo',
     components: {

@@ -21,10 +21,10 @@
 
   Vue.use(DCascader);
   @Component({
-    name: 'DProvince',
+    name: 'DArea',
     components: {}
   })
-  export default class VProvince extends Vue {
+  export default class DArea extends Vue {
     @Prop({
       type: String
     })
@@ -34,7 +34,10 @@
     }) // 指定选中项：string[] | number[]
     public value: string[]; // 输入框大小：string，可选 large default small
     public data: Area[] = China; // 数据
-    public names: string[] = []; // 匹配名称
+    public names: string[] = [];
+    public static install: any;
+
+    // 匹配名称
     /**
      * 选择
      */

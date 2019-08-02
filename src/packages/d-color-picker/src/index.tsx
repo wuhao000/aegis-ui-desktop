@@ -19,7 +19,7 @@ class DColorPicker extends Vue {
   public disabled: boolean;
 
   // 禁用状态
-  @Prop({type: String, required: true})
+  @Prop({type: String})
   public value: string;
 
   // 面板打开状态

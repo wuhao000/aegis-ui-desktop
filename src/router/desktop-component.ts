@@ -81,9 +81,9 @@ export default [{
   name: 'DPopover 气泡卡片',
   component: () => import('@/generated/d-popover/index.vue')
 }, {
-  path: 'd-province',
-  name: 'DProvince 省市区联动',
-  component: () => import('@/generated/d-province/index.vue')
+  path: 'd-area',
+  name: 'DArea 省市区联动',
+  component: () => import('@/generated/d-area/index.vue')
 }, {
   path: 'd-radio',
   name: 'DRadio 单选',

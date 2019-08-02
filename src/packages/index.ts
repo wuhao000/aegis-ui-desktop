@@ -31,7 +31,7 @@ import DMenu from './d-menu';
 import DMessage from './d-message';
 import DPagination from './d-pagination';
 import DPopover from './d-popover';
-import DProvince from './d-province';
+import DArea from './d-area';
 import DRadio from './d-radio';
 import DRate from './d-rate';
 import DSelect from './d-select';
@@ -85,7 +85,7 @@ const components = [
 	DMessage,
 	DPagination,
 	DPopover,
-	DProvince,
+	DArea,
 	DRadio,
 	DRate,
 	DSelect,
@@ -145,7 +145,7 @@ export {
 	DMessage,
 	DPagination,
 	DPopover,
-	DProvince,
+	DArea,
 	DRadio,
 	DRate,
 	DSelect,
@@ -193,7 +193,7 @@ export default {
 	DMessage,
 	DPagination,
 	DPopover,
-	DProvince,
+	DArea,
 	DRadio,
 	DRate,
 	DSelect,

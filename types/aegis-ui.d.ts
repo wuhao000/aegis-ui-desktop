@@ -25,7 +25,7 @@ import {DMenuComponent} from './components/d-menu';
 import {DMessageComponent} from './components/d-message';
 import {DPaginationComponent} from './components/d-pagination';
 import {DPopoverComponent} from './components/d-popover';
-import {DProvinceComponent} from './components/d-province';
+import {DAreaComponent} from './components/d-area';
 import {DRadioComponent} from './components/d-radio';
 import {DRateComponent} from './components/d-rate';
 import {DSelectComponent} from './components/d-select';
@@ -94,7 +94,7 @@ export class DPagination extends DPaginationComponent {
 }
 export class DPopover extends DPopoverComponent {
 }
-export class DProvince extends DProvinceComponent {
+export class DArea extends DAreaComponent {
 }
 export class DRadio extends DRadioComponent {
 }
