@@ -90,13 +90,13 @@ const getOptionProps = instance => {
     const {propsData = {}, Ctor = {}} = componentOptions;
     const props: any = (Ctor.options || {}).props || {};
     const res = {};
-    for (const [k, v] of Object.entries(props)) {
+    _.entries(props).forEach(([k, v]) => {
       const def = (v as any).default;
       if (def !== undefined) {
         res[k] =
           typeof def === 'function' && getType((v as any).type) !== 'Function' ? def.call(instance) : def;
       }
-    }
+    });
     return {...res, ...propsData};
   }
   const {$options = {}, $props = {}} = instance;
@@ -260,14 +260,14 @@ export function mergeProps() {
   const args = [].slice.call(arguments, 0);
   const props = {};
   args.forEach((p = {}) => {
-    for (const [k, v] of Object.entries(p)) {
+    _.entries(p).forEach(([k, v]) => {
       props[k] = props[k] || {};
       if (isPlainObject(v)) {
         Object.assign(props[k], v);
       } else {
         props[k] = v;
       }
-    }
+    });
   });
   return props;
 }

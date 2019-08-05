@@ -24,7 +24,7 @@ export default class DInput extends BaseFormComponent {
 
   public onInput(value) {
     let val = value;
-    if (value && value.toString() === '[object InputEvent]') {
+    if (value && ['[object InputEvent]', '[object Event]'].includes(value.toString())) {
       val = value.target.value;
     }
     if (typeof val !== 'object' && typeof val !== 'function') {

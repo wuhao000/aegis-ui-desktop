@@ -1,11 +1,11 @@
 import App from '@/views/app.vue';
+import 'babel-polyfill';
 import 'highlight.js/styles/atelier-cave-dark.css';
-import zhCn from './packages/moment-zh_CN';
 import Vue from 'vue';
+import AegisUI from './packages/index';
+import './packages/moment-zh_CN';
 import router from './router';
 import store from './store';
-import AegisUI from './packages/index';
-moment.updateLocale('zh-cn', zhCn);
 
 Vue.use(AegisUI);
 /**

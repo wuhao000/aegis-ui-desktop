@@ -1,36 +1,36 @@
 <template>
   <div>
     <d-form-item prop="name">
-      {{form.keywords}}
+      <a-input v-model="form.keywords"/>
       <d-input v-model="form.keywords"
                class="search-keywords"
                placeholder="请输入关键词进行检索"
                @keydown.enter="loadData"/>
     </d-form-item>
-    <d-form :model="form"
-            :rules="rules">
-    </d-form>
-    <d-input-search @search="searchClicked">
-      <div slot="enterButton">
-        <ae-icon type="check"></ae-icon>
-        <span>
-        查询
-      </span>
-      </div>
-    </d-input-search>
-    <div class="m-t">
-      <d-input-group>
-        <d-input style="width: 20%"/>
-        <d-input style="width: 30%"
-                 :value="1234"/>
-      </d-input-group>
-    </div>
-    <div class="m-t">
-      <d-input-search v-model="value3"/>
-    </div>
-    <div class="m-t">
-      <d-textarea v-model="value4"/>
-    </div>
+<!--    <d-form :model="form"-->
+<!--                  :rules="rules">-->
+<!--  </d-form>-->
+<!--    <d-input-search @search="searchClicked">-->
+<!--      <div slot="enterButton">-->
+<!--        <ae-icon type="check"></ae-icon>-->
+<!--        <span>-->
+<!--        查询-->
+<!--      </span>-->
+<!--      </div>-->
+<!--    </d-input-search>-->
+<!--    <div class="m-t">-->
+<!--      <d-input-group>-->
+<!--        <d-input style="width: 20%"/>-->
+<!--        <d-input style="width: 30%"-->
+<!--                 :value="1234"/>-->
+<!--      </d-input-group>-->
+<!--    </div>-->
+<!--    <div class="m-t">-->
+<!--      <d-input-search v-model="value3"/>-->
+<!--    </div>-->
+<!--    <div class="m-t">-->
+<!--      <d-textarea v-model="value4"/>-->
+<!--    </div>-->
   </div>
 </template>
 <script lang="ts">

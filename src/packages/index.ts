@@ -2,7 +2,7 @@
 import Global from './global';
 import HttpMethod from './http-method';
 import VueIcon from '@ant-design/icons-vue';
-import zhCn from './moment-zh_CN';
+import './moment-zh_CN';
 import AeCodemirror from './ae-codemirror';
 import AeGrid from './ae-grid';
 import AeIcon from './ae-icon';
@@ -46,9 +46,6 @@ import DUpload from './d-upload';
 import DYearPicker from './d-year-picker';
 import TimeDirective from './time-directive';
 // 注册moment中文国际化文案
-if (moment) {
-  moment.updateLocale('zh-cn', zhCn);
-}
 if (window.AntDesignIcons) {
   // 注册 ant design icons, 共721个icon
   const icons = window.AntDesignIcons;

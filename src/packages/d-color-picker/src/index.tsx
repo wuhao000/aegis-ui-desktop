@@ -19,8 +19,8 @@ class DColorPicker extends Vue {
   public disabled: boolean;
 
   // 禁用状态
-  @Prop({type: String})
-  public value: string;
+  @Prop()
+  public value: any;
 
   // 面板打开状态
   public html5Color: string = this.value;
@@ -255,7 +255,6 @@ class DColorPicker extends Vue {
                        class="color-cubte"
                        key={cindex}
                        onClick={() => {
-                         console.log('click:' + color);
                          this.updataValue(color);
                        }}
                        onMouseout={() => {

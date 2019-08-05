@@ -1,5 +1,5 @@
 import {PluginObject, VueConstructor} from 'vue';
-import ColorPicker from './src/index';
+import ColorPicker from './src';
 import './style/index.less';
 
 // 为组件提供 install 安装方法，供按需引入
