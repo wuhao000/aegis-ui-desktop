@@ -23,3 +23,6 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+if (location.pathname === '/') {
+  router.push('/install');
+}

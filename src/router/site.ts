@@ -17,7 +17,7 @@ export default {
       component: Home
     },
     {
-      path: 'install',
+      path: 'develop',
       name: '开发',
       component: () => import('@/views/develop.vue')
     },
