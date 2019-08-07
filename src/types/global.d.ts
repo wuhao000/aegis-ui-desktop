@@ -104,7 +104,6 @@ declare module 'vue/types/options' {
 }
 declare global {
   export const moment: typeof Moment;
-  export const axios: any;
   export const hljs: any;
   export const _: LoDashStatic;
 }

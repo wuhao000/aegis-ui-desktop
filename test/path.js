@@ -1,12 +1,2 @@
-const array = [{
-  name: 'afs'
-}, {
-  name: 'fgs'
-}, {
-  name: 'dds'
-}, {
-  name: 'css'
-}];
-console.log(array.sort((a, b) => {
-  return a.name.localeCompare(b.name);
-}));
+const qs = require('querystring');
+console.log(qs.stringify(['1', '2']));

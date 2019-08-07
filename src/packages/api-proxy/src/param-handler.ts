@@ -1,7 +1,7 @@
-import {API, ParamType} from '../../../../types';
-import HttpMethod from '../../http-method';
 import {AxiosRequestConfig} from 'axios';
 import qs from 'querystring';
+import {API, ParamType} from '../../../../types';
+import HttpMethod from '../../http-method';
 
 /**
  * 判断对象是不是数组
@@ -70,7 +70,7 @@ function toSegments(path: string): string[] {
  */
 export const assignParams = (obj: API & AxiosRequestConfig, params?: ParamType): API & AxiosRequestConfig => {
   if (params) {
-    if (isArray(params)) {
+    if (obj.isFormData && isArray(params)) {
       throw Error('不接受数组参数');
     }
     const copyParams = Object.assign({}, params);
@@ -80,7 +80,11 @@ export const assignParams = (obj: API & AxiosRequestConfig, params?: ParamType):
     } else if ([HttpMethod.GET, HttpMethod.DELETE].includes(obj.method)) {
       obj.url = `${obj.url}?${qs.stringify(copyParams)}`;
     } else {
-      obj.data = copyParams;
+      if (isArray(params)) {
+        obj.data = [].concat(params);
+      } else {
+        obj.data = copyParams;
+      }
     }
     return obj;
   } else {

@@ -8,6 +8,7 @@ export declare class DTableComponent extends UIComponent {
 interface Action {
   label?: string;
   icon?: string;
+  props?: any;
   onClick: (...args: any) => any;
 }
 
@@ -15,7 +16,7 @@ export interface TableColumn {
   align?: 'left' | 'right' | 'center';
   colSpan?: number;
   dataType?: 'date' | 'number' | 'index';
-  dataTypeOptions: { [key: string]: any };
+  dataTypeOptions?: { [key: string]: any };
   dataIndex?: string;
   filterDropdown?: VNode;
   filterDropdownVisible?: boolean;
@@ -52,5 +53,5 @@ export interface TableColumn {
   customCell?: (record: any, rowIndex: any) => any;
   customHeaderCell?: (column: TableColumn) => any;
   scopedSlots?: { [key: string]: any };
-  actions: Array<Action | Action[]>;
+  actions?: Array<Action | Action[]>;
 }

@@ -76,6 +76,37 @@ export default class DTable extends ProxyComponent {
             };
           }
         }
+      } else {
+        if (column.actions) {
+          column.customRender = (value, record, index) => {
+            return <div>
+              {
+                column.actions.map(action => {
+                  if (Array.isArray(action)) {
+                    return <a-dropdown trigger={['click']}>
+                      <d-button text size="small">更多
+                        <ae-icon type="down"/>
+                      </d-button>
+                      <a-menu slot="overlay">
+                        {
+                          action.map(ac => {
+                            return <a-menu-item props={ac.props} onClick={() => {
+                              ac.onClick(value, record, index);
+                            }}>{ac.label}</a-menu-item>;
+                          })
+                        }
+                      </a-menu>
+                    </a-dropdown>;
+                  } else {
+                    return <d-button text size="small" icon={action.icon} onClick={(e) => {
+                      action.onClick(value, record, index);
+                    }} attrs={action.props}>{action.label}</d-button>;
+                  }
+                })
+              }
+            </div>;
+          };
+        }
       }
     });
     return columns;

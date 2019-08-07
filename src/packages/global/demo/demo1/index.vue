@@ -3,7 +3,6 @@
     <div>
       <d-button inline
                 size="small"
-                type="info"
                 @click="registerAPI">注册API
       </d-button>
       <d-button inline

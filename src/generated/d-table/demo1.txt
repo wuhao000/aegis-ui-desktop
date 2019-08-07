@@ -16,6 +16,7 @@
 <script lang="ts">
   import Vue from 'vue';
   import Component from 'vue-class-component';
+  import {TableColumn} from '../../../../../types/components/d-table';
   import DTable from '../../index';
 
   Vue.use(DTable);
@@ -23,7 +24,7 @@
     name: 'Demo1'
   })
   export default class Demo1 extends Vue {
-    public columns = [{title: '序号', dataType: 'index'}, {
+    public columns: TableColumn[] = [{title: '序号', dataType: 'index'}, {
       title: '标题',
       dataIndex: 'title'
     }, {
@@ -36,9 +37,19 @@
       dataType: 'date'
     }, {
       title: '操作',
-      scopedSlots: {
-        customRender: 'opts'
-      }
+      actions: [{
+        label: '删除',
+        props: {type: 'danger'},
+        onClick: (r) => {
+          console.log(r);
+        }
+      }, [{
+        label: '编辑',
+        props: {},
+        onClick: () => {
+          console.log('编辑');
+        }
+      }]]
     }];
 
     public dataSource = [];
