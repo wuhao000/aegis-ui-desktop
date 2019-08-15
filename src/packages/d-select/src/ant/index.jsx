@@ -124,6 +124,9 @@ const Select = {
     blur() {
       this.$refs.vcSelect.blur();
     },
+    close() {
+      this.$refs.vcSelect.setOpenState(false);
+    },
     getNotFoundContent(locale) {
       const notFoundContent = getComponentFromProp(this, 'notFoundContent');
       if (this.isCombobox()) {
