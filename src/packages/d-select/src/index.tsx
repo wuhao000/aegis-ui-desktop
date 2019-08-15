@@ -3,9 +3,8 @@ import Component from 'vue-class-component';
 import {Prop, Provide} from 'vue-property-decorator';
 import OptionsBasedComponent from '../../../mixins/options-based-component';
 import {getNodeText} from '../../utils/vnode';
-import {noop} from '../../utils/vue-types/utils';
-
-const Select: any = window.antd.Select;
+import {noop} from 'ant-design-vue/es/_util/vue-types/utils';
+import Select from './ant';
 
 /**
  * 选项较多的时候

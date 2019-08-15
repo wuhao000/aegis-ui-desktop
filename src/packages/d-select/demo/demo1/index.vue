@@ -25,6 +25,18 @@
                 :filter="filter"
                 :options="options5"></d-select>
     </d-form-item>
+    <d-form-item label="自定义渲染内容">
+      <d-select searchable
+                v-model="value2"
+                placeholder="请选择"
+                style="min-width:100px;">
+        <div slot="dropdownRender" slot-scope="menu">
+          <d-button @click="addOption" icon="plus">添加选项</d-button>
+        </div>
+        <d-select-option value="1">abc</d-select-option>
+        <d-select-option value="2">def</d-select-option>
+      </d-select>
+    </d-form-item>
     <d-form-item label="可搜索的(自定义选项)">
       <d-select searchable
                 v-model="value2"
@@ -176,7 +188,6 @@
     }
 
     public createOptions(count: number, freeze: boolean = false) {
-      console.log(1);
       const options = [];
       for (let i = 0; i < count; i++) {
         options.push({
@@ -198,6 +209,10 @@
       console.log(input);
       console.log(option);
       return true;
+    }
+
+    public addOption() {
+      console.log('add');
     }
 
     public getLabel(option) {

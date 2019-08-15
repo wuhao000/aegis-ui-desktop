@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import antInputDirective from '../utils/ant-input-directive';
+import antInputDirective from 'ant-design-vue/es/_util/antInputDirective';
 import Input from './src';
 import './style';
 

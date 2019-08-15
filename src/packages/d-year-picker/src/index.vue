@@ -8,6 +8,7 @@
             :placeholder="placeholder">
     <div ref="dropdown"
          slot="dropdownRender"
+         slot-scope="menu"
          style="width:300px;">
       <div class="d-year-picker-header">
         <ae-row>
