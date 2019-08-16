@@ -8,5 +8,10 @@ export default {
     Vue.component('AeLayoutContent', Layout.Content);
     Vue.component('AeLayoutFooter', Layout.Footer);
     Vue.component('AeLayoutSider', Layout.Sider);
+    Vue.component('DLayout', Layout);
+    Vue.component('DLayoutHeader', Layout.Header);
+    Vue.component('DLayoutContent', Layout.Content);
+    Vue.component('DLayoutFooter', Layout.Footer);
+    Vue.component('DLayoutSider', Layout.Sider);
   }
 };

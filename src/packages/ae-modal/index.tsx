@@ -142,6 +142,7 @@ function createModal(message: string | ModalOptions, title: string, icon: string
 
 AeModal.install = (Vue) => {
   Vue.component('AeModal', AeModal);
+  Vue.component('DModal', AeModal);
   Vue.use(DButton);
   const alert: AeAlert = (message: string | ModalOptions,
                           title?: string,
