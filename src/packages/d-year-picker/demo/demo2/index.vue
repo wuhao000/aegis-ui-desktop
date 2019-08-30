@@ -2,6 +2,7 @@
   <div>
     <d-year-picker clearable
                    v-model="year"
+                   :min="2200"
                    :disabledDate="disabledDate"></d-year-picker>
     <div style="margin-top: 20px">{{year}}</div>
   </div>

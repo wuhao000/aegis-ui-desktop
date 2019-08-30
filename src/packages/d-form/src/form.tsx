@@ -130,7 +130,7 @@ export default class DForm extends Vue {
     if (typeof copyCallback !== 'function' && Promise) {
       promise = new Promise((resolve, reject) => {
         copyCallback = (valid) => {
-          const errorField = this.fields.find(it => it.validateStatus === 'error');
+          const errorField = this.fields.find(it => it.currentValidateStatus === 'error');
           if (errorField) {
             errorField.focus();
           }

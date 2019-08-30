@@ -16,7 +16,7 @@
   })
   export default class Demo1 extends Vue {
     public value = [];
-    private year: string = '';
+    public year: number[] = [2019, 2020, 2021];
   }
 </script>
 <style scoped lang="less">

@@ -5,7 +5,10 @@
               layout="horizontal"
               @cancel="$message.error('cancel clicked')"
               @ok="$message.success('ok clicked')">
-        <d-form-item label="标题">
+        <d-form-item help="出错了"
+                     has-feedback
+                     validate-status="error"
+                     label="标题">
           <d-input/>
         </d-form-item>
         <d-form-item label="起止日期">
