@@ -17,7 +17,9 @@ export default Vue.extend({
     value: {},
     required: {type: Boolean, default: false},
     rules: {type: [Object, Array]},
-    label: {type: String, default: ''}
+    label: {type: String, default: ''},
+    validateStatus: {type: String},
+    help: {type: String}
   },
   inject: ['form'],
   provide() {
@@ -27,8 +29,8 @@ export default Vue.extend({
   },
   data(): any {
     return {
-      validateStatus: '',
-      help: '',
+      currentValidateStatus: '',
+      currentHelp: '',
       validateDisabled: true,
       control: null
     };
@@ -61,11 +63,11 @@ export default Vue.extend({
       if (this.$attrs['label-col']) {
         labelCol = this.$attrs['label-col'];
       }
-      if (this.form && this.form.labelCols) {
-        if (typeof this.form.labelCols === 'number') {
-          labelCol.span = this.form.labelCols;
+      if (this.form && this.form.labelCol) {
+        if (typeof this.form.labelCol === 'number') {
+          labelCol.span = this.form.labelCol;
         } else {
-          labelCol = this.form.labelCols;
+          labelCol = this.form.labelCol;
         }
       }
       labelCol.style = this.labelStyle;
@@ -85,15 +87,15 @@ export default Vue.extend({
       if (this.$attrs['wrapper-col']) {
         wrapperCol = this.$attrs['wrapper-col'];
       }
-      if (this.form && this.form.wrapperCols) {
-        if (typeof this.form.wrapperCols === 'number') {
-          wrapperCol.span = this.form.wrapperCols;
+      if (this.form && this.form.wrapperCol) {
+        if (typeof this.form.wrapperCol === 'number') {
+          wrapperCol.span = this.form.wrapperCol;
         } else {
-          wrapperCol = this.form.wrapperCols;
+          wrapperCol = this.form.wrapperCol;
         }
-      } else if (this.form && this.form.labelCols) {
-        if (typeof this.form.labelCols === 'number') {
-          wrapperCol.span = 24 - this.form.labelCols;
+      } else if (this.form && this.form.labelCol) {
+        if (typeof this.form.labelCol === 'number') {
+          wrapperCol.span = 24 - this.form.labelCol;
         }
       }
       wrapperCol.style = this.wrapperStyle;
@@ -174,7 +176,7 @@ export default Vue.extend({
           callback();
           return true;
         }
-        this.validateStatus = 'validating';
+        this.currentValidateStatus = 'validating';
         const descriptor = {};
         if (rules && rules.length > 0) {
           rules.forEach(rule => {
@@ -187,11 +189,11 @@ export default Vue.extend({
           [this.prop]: this.fieldValue
         };
         validator.validate(model, {firstFields: true}, (errors, invalidFields) => {
-          this.validateStatus = !errors ? 'success' : 'error';
-          this.help = errors ? errors[0].message : '';
-          callback(this.help, invalidFields);
+          this.currentValidateStatus = !errors ? 'success' : 'error';
+          this.currentHelp = errors ? errors[0].message : '';
+          callback(this.currentHelp, invalidFields);
           this.$emit('validate', !errors, errors);
-          this.form && this.form.$emit('validate', this.prop, !errors, this.help || null);
+          this.form && this.form.$emit('validate', this.prop, !errors, this.currentHelp || null);
         });
       });
     }
@@ -201,12 +203,12 @@ export default Vue.extend({
     if (this.$slots.label) {
       props.label = this.$slots.label;
     }
+    props.help = this.help || this.currentHelp;
+    props.labelCol = this.labelCol;
+    props.validateStatus = this.validateStatus || this.currentValidateStatus;
+    props.wrapperCol = this.wrapperCol;
     return <Form.Item props={props}
-                      attrs={this.$attrs}
-                      help={this.help}
-                      labelCol={this.labelCol}
-                      validateStatus={this.validateStatus}
-                      wrapperCol={this.wrapperCol}>
+                      attrs={this.$attrs}>
       {this.$slots.default}
     </Form.Item>;
   }

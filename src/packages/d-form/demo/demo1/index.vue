@@ -1,14 +1,16 @@
 <template>
   <div>
     <d-card>
+      <d-form-item help="出错了"
+                   label="测试校验样式"
+                   validateStatus="error"></d-form-item>
       <d-form ok-cancel
               layout="horizontal"
               @cancel="$message.error('cancel clicked')"
               @ok="$message.success('ok clicked')">
-        <d-form-item help="出错了"
-                     has-feedback
-                     validate-status="error"
-                     label="标题">
+        <d-form-item has-feedback help="出错了"
+                     label="标题"
+                     validate-status="error">
           <d-input/>
         </d-form-item>
         <d-form-item label="起止日期">

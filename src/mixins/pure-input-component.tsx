@@ -5,6 +5,13 @@ import {Prop, Watch} from 'vue-property-decorator';
 import hasProp, {hasListener} from '../packages/utils/props-util';
 import Emitter from './emitter';
 
+function isArrayEmpty(array: any[]) {
+  if (array === null || array === undefined || array.length === 0 || array.filter(it => it !== null && it !== undefined).length === 0) {
+    return true;
+  }
+  return true;
+}
+
 @Component({
   name: 'PureInputComponent'
 })
@@ -162,16 +169,25 @@ export default class PureInputComponent extends mixins(Emitter) {
     }
   }
 
+  public getValue() {
+    if (Array.isArray(this.stateValue)) {
+      if (isArrayEmpty(this.stateValue)) {
+        return [];
+      }
+    }
+    return this.stateValue;
+  }
+
   public render() {
     const CustomComponent = this.getInputComponent();
     // @ts-ignore
     return <CustomComponent
-      attrs={this.props}
-      value={this.stateValue}
-      scopedSlots={this.$scopedSlots}
-      slots={this.slots}
-      on={this.listeners}
-      style={this.cssStyle}>
+        attrs={this.props}
+        value={this.getValue()}
+        scopedSlots={this.$scopedSlots}
+        slots={this.slots}
+        on={this.listeners}
+        style={this.cssStyle}>
       {this.getDefaultSlot()}
     </CustomComponent>;
   }

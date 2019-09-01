@@ -1,6 +1,7 @@
 <template>
   <div id="components-cascader-demo">
     <d-cascader placeholder="请选择"
+                :value="value"
                 :load-data="loadOptions"
                 :options="options"
                 @change="onChange"/>
@@ -16,10 +17,9 @@
     name: 'Demo'
   })
   export default class Demo extends Vue {
-    public null;
 
-    public options = [
-      {
+    public value = [null, null, null];
+    public options = [{
       value: 'zhejiang',
       label: '浙江',
       isLeaf: false,
@@ -35,7 +35,12 @@
       isLeaf: false,
       loading: false,
       children: [{
-        label: '南京', value: 'nj'
+        label: '南京', value: 'nj',
+        children: [{
+          label: '鼓楼区', value: 'gl'
+        }, {
+          label: '玄武区', value: 'xw'
+        }]
       }, {
         label: '苏州', value: 'sz'
       }]

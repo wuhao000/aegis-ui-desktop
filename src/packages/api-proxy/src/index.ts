@@ -62,6 +62,7 @@ export default (apiObj: ApiObject<ApiDef>,
 
   const request = (obj: API & AxiosRequestConfig, params?: ParamType) => {
     obj.url = obj.url + (config.pathSuffix || '');
+    // @ts-ignore
     obj.method = obj.method || HttpMethod.GET;
     assignParams(obj, params);
     const p = Axios.request(obj);

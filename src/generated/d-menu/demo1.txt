@@ -1,7 +1,13 @@
 <template>
   <div>
-    <d-menu mode="inline">
-      <d-menu-item>
+    <d-menu mode="inline" inline-collapsed>
+      <d-menu-item key="1">
+        这是一个菜单项
+      </d-menu-item>
+      <d-menu-item key="2">
+        这是一个菜单项
+      </d-menu-item>
+      <d-menu-item key="3">
         这是一个菜单项
       </d-menu-item>
     </d-menu>

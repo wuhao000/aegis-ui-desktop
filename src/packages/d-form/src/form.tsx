@@ -34,7 +34,7 @@ export default class DForm extends Vue {
       return 0;
     }
   })
-  public labelCols: number | object;
+  public labelCol: number | object;
   @Prop({type: String, default: '确定'})
   public okText: string;
   @Prop({type: String, default: '取消'})
@@ -76,7 +76,7 @@ export default class DForm extends Vue {
       return 0;
     }
   })
-  public wrapperCols: number | object;
+  public wrapperCol: number | object;
   public fields: any[] = [];
   @Provide('form')
   public form = this;

@@ -24,7 +24,7 @@ if (moment) {
         copyHour = 0;
       }
       if (meridiem === '凌晨' || meridiem === '早上' ||
-        meridiem === '上午') {
+          meridiem === '上午') {
         return copyHour;
       } else if (meridiem === '下午' || meridiem === '晚上') {
         return copyHour + 12;
