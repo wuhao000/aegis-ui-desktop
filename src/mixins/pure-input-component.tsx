@@ -9,7 +9,7 @@ function isArrayEmpty(array: any[]) {
   if (array === null || array === undefined || array.length === 0 || array.filter(it => it !== null && it !== undefined).length === 0) {
     return true;
   }
-  return true;
+  return false;
 }
 
 @Component({
@@ -180,14 +180,15 @@ export default class PureInputComponent extends mixins(Emitter) {
 
   public render() {
     const CustomComponent = this.getInputComponent();
+    const value = this.getValue();
     // @ts-ignore
     return <CustomComponent
-        attrs={this.props}
-        value={this.getValue()}
-        scopedSlots={this.$scopedSlots}
-        slots={this.slots}
-        on={this.listeners}
-        style={this.cssStyle}>
+      attrs={this.props}
+      value={value}
+      scopedSlots={this.$scopedSlots}
+      slots={this.slots}
+      on={this.listeners}
+      style={this.cssStyle}>
       {this.getDefaultSlot()}
     </CustomComponent>;
   }

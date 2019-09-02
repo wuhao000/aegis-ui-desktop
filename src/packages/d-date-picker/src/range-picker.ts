@@ -1,7 +1,7 @@
+import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import BaseFormComponent from '../../../mixins/base-input-component';
-import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 
 const DatePicker = window.antd.DatePicker;
 @Component({
@@ -22,7 +22,7 @@ export default class DRangePicker extends BaseFormComponent {
     if (!value) {
       return undefined;
     }
-    return value.map(it => moment(it));
+    return value.filter(it => it !== null && it !== undefined).map(it => moment(it));
   }
 
   public convertValueBack(value: any): any {
@@ -47,13 +47,13 @@ export default class DRangePicker extends BaseFormComponent {
   @Watch('value')
   public valueChanged(value: any) {
     const convertValue = this.convertValue(value);
-    if (this['stateValue'] === null || this['stateValue'] === undefined) {
-      this['stateValue'] = convertValue;
+    if (this.stateValue === null || this['stateValue'] === undefined) {
+      this.stateValue = convertValue;
     } else if (!convertValue) {
-      this['stateValue'] = undefined;
+      this.stateValue = [];
     } else {
-      if (this['stateValue'].toString() !== convertValue.toString()) {
-        this['stateValue'] = convertValue;
+      if (this.stateValue.toString() !== convertValue.toString()) {
+        this.stateValue = convertValue;
       }
     }
   }

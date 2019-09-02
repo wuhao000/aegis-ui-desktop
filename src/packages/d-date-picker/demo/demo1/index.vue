@@ -2,7 +2,8 @@
   <div>
     <div>
       <a-date-picker show-time
-                     v-model="value5" format="YYYY-MM-DD HH:mm:ss"/>
+                     v-model="value5"
+                     format="YYYY-MM-DD HH:mm:ss"></a-date-picker>
       <d-date-picker clearable
                      mode="datetime"/>
       <d-date-picker clearable
@@ -22,13 +23,11 @@
 </template>
 <script lang="ts">
   import axios from 'axios';
-  import DatePicker from './date-picker';
   import Vue from 'vue';
   import Component from 'vue-class-component';
 
   @Component({
-    name: 'Demo1',
-    components: {DatePicker}
+    name: 'Demo1'
   })
   export default class Demo1 extends Vue {
 

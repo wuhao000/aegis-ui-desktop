@@ -1,22 +1,11 @@
 <template>
   <div>
-    <div>
-      <a-date-picker show-time
-                     v-model="value5"
-                     format="YYYY-MM-DD HH:mm:ss"></a-date-picker>
-      <d-date-picker clearable
-                     mode="datetime"/>
-      <d-date-picker clearable
-                     v-model="value1"
-                     mode="date"/>
-      <d-date-picker clearable
-                     v-model="value2"
-                     mode="month"/>
-      <d-date-picker clearable
-                     v-model="value3"
-                     mode="week"/>
-      {{range}}
+    <div class="m-b">
       <d-range-picker v-model="range"/>
+    </div>
+    <div class="m-b">
+      开始时间: <span v-time="range[0]"></span>
+      结束时间: <span v-time="range[1]"></span>
     </div>
     <d-button @click="submit">提交</d-button>
   </div>
@@ -31,7 +20,7 @@
   })
   export default class Demo1 extends Vue {
 
-    public range = [];
+    public range = [null, null];
     public range2 = [];
     public value1 = null;
     public value2 = Date.now();
