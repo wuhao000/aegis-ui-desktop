@@ -21,7 +21,11 @@ export default Vue.extend({
     validateStatus: {type: String},
     help: {type: String}
   },
-  inject: ['form'],
+  inject: {
+    form: {
+      default: undefined
+    }
+  },
   provide() {
     return {
       formItem: this
