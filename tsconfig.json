@@ -30,7 +30,8 @@
     },
     "typeRoots": [
       "node_modules/@types",
-      "types"
+      "types",
+      "jest"
     ],
     "lib": [
       "esnext",
@@ -42,6 +43,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "node_modules/@types/jest/index.d.ts"
   ]
 }

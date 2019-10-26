@@ -1,6 +1,6 @@
 import {AxiosRequestConfig} from 'axios';
-import qs from 'querystring';
-import {API, ParamType} from '../../../../types';
+import qs from 'qs';
+import {API, ParamType} from 'types';
 import HttpMethod from '../../http-method';
 
 /**
@@ -45,7 +45,7 @@ function toSegments(path: string): string[] {
   for (let index = 0; index < path.length; index++) {
     const char = path[index];
     if ((char === ':' && (index === 0 || path[index - 1] === '/'))
-      || (['/', '?', '&', '#'].indexOf(char) >= 0 && start >= 0)) {
+        || (['/', '?', '&', '#'].indexOf(char) >= 0 && start >= 0)) {
       if (index > 0) {
         result.push(path.substring(start, index));
       }
@@ -79,12 +79,10 @@ export const assignParams = (obj: API & AxiosRequestConfig, params?: ParamType):
       obj.data = qs.stringify(copyParams);
     } else if (HttpMethod.GET === obj.method) {
       obj.url = `${obj.url}?${qs.stringify(copyParams)}`;
+    } else if (isArray(params)) {
+      obj.data = [].concat(params);
     } else {
-      if (isArray(params)) {
-        obj.data = [].concat(params);
-      } else {
-        obj.data = copyParams;
-      }
+      obj.data = copyParams;
     }
     return obj;
   } else {

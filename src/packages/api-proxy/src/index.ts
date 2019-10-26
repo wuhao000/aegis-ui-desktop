@@ -46,8 +46,16 @@ export default (apiObj: ApiObject<ApiDef>,
     const p = request(obj, params);
     // @ts-ignore
     return Promise.resolve(p).then((v: AxiosResponse<ApiResponse<any>>) => {
+      if (v.data.msg) {
+        v.data.message = v.data.msg;
+      } else if (v.data.message) {
+        v.data.msg = v.data.message;
+      }
       return new Promise((resolve, reject) => {
         if (v.data.code) {
+          if ((obj.errorHandleType === undefined || obj.errorHandleType === 'global') && config.logicErrorHandler) {
+            config.logicErrorHandler(v.data, v.data.code);
+          }
           reject(v.data);
         } else {
           if (pure) {
@@ -67,10 +75,10 @@ export default (apiObj: ApiObject<ApiDef>,
     assignParams(obj, params);
     const p = Axios.request(obj);
     return Promise.resolve(p).then((v: AxiosResponse<ApiResponse<any>>) => new Promise((resolve) => {
-      if ((obj.errorHandleType === undefined || obj.errorHandleType === 'global')
-          && config.logicErrorHandler
-          && v.data.code) {
-        config.logicErrorHandler(v.data, v.data.code);
+      if (v.data.msg) {
+        v.data.message = v.data.msg;
+      } else if (v.data.message) {
+        v.data.msg = v.data.message;
       }
       resolve(v);
     })).catch((err: AxiosError) => new Promise((resolve, reject) => {

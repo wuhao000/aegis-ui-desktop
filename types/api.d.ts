@@ -5,7 +5,8 @@ import HttpMethod from '../src/packages/http-method';
 export interface ApiResponse<D> {
   code: number;
   data: D;
-  msg: string;
+  msg?: string;
+  message?: string;
 }
 
 export interface ApiObject<T = API | ApiDef> {
