@@ -2,7 +2,7 @@ import APiProxy from '../api-proxy';
 import axios, {AxiosRequestConfig} from 'axios';
 import {PluginObject, VueConstructor} from 'Vue';
 import Vue from 'vue';
-import {API, ApiObject, AppConfig} from '../../../types';
+import {API, ApiObject, AppConfig} from 'types';
 
 
 const apiProxy = (apiObject: ApiObject, config: AppConfig,
