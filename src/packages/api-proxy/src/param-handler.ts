@@ -75,9 +75,9 @@ export const assignParams = (obj: API & AxiosRequestConfig, params?: ParamType):
     }
     const copyParams = Object.assign({}, params);
     obj.url = replaceRestParams(obj.url, copyParams);
-    if (obj.isFormData && [HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE].includes(obj.method)) {
+    if (obj.isFormData && [HttpMethod.POST, HttpMethod.PUT].includes(obj.method)) {
       obj.data = qs.stringify(copyParams);
-    } else if (HttpMethod.GET === obj.method) {
+    } else if (HttpMethod.GET === obj.method || (obj.isFormData && [HttpMethod.DELETE].includes(obj.method))) {
       obj.url = `${obj.url}?${qs.stringify(copyParams)}`;
     } else if (isArray(params)) {
       obj.data = [].concat(params);
