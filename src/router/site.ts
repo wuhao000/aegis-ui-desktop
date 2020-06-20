@@ -27,11 +27,6 @@ export default {
       component: () => import('@/views/change-log.vue')
     },
     {
-      path: '/global',
-      name: '全局工具',
-      component: () => import('@/views/global.vue')
-    },
-    {
       path: '/general-components',
       name: '通用组件',
       component: () => import('@/components/components.vue'),

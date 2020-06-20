@@ -16,83 +16,83 @@
             :model="form"
             :rules="rules"
             :size="size">
-      <ae-row>
-        <ae-col :span="cols">
+      <d-row>
+        <d-col :span="cols">
           <d-form-item required
                        label="时间">
             <d-time-picker v-model="form.time"/>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item required
                        label="姓名"
                        prop="name">
             <d-input v-model="form.name"
                      placeholder="请输入"/>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item required
                        label="年龄">
             <d-input-number v-model="form.age"
                             placeholder="请输入年龄"/>
           </d-form-item>
-        </ae-col>
-      </ae-row>
-      <ae-row>
-        <ae-col :span="cols">
+        </d-col>
+      </d-row>
+      <d-row>
+        <d-col :span="cols">
           <d-form-item required
                        label="性别"
                        prop="gender">
             <d-radio-group v-model="form.gender"
                            :options="[{value:1,label:'男'}, {value:2,label:'女'}]"/>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item label="所属地区">
             <d-cascader v-model="form.location"></d-cascader>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item label="生日">
             <d-date-picker v-model="form.birthday"
                            mode="date"></d-date-picker>
           </d-form-item>
-        </ae-col>
-      </ae-row>
-      <ae-row>
-        <ae-col :span="cols">
+        </d-col>
+      </d-row>
+      <d-row>
+        <d-col :span="cols">
           <d-form-item required
                        label="爱好">
             <d-checkbox-group button
                               v-model="form.favorites"
                               :options="[{label:'爬山',value:1}, {label:'音乐',value:2}]"></d-checkbox-group>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item label="评分">
             <d-rate></d-rate>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item label="滑动条">
             <d-slider v-model="form.score"></d-slider>
           </d-form-item>
-        </ae-col>
-      </ae-row>
-      <ae-row>
-        <ae-col :span="cols">
+        </d-col>
+      </d-row>
+      <d-row>
+        <d-col :span="cols">
           <d-form-item label="自动完成">
             <d-auto-complete v-model="form.description"/>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols * 2">
+        </d-col>
+        <d-col :span="cols * 2">
           <d-form-item label="穿梭框">
             <d-transfer v-model="form.blocks"
                         :data-source="[{title:'1', key:'1'}, {title:'2',key:'2'}]"/>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item label="上传头像">
             <d-upload>
               <div>
@@ -100,10 +100,10 @@
               </div>
             </d-upload>
           </d-form-item>
-        </ae-col>
-      </ae-row>
-      <ae-row>
-        <ae-col :span="cols">
+        </d-col>
+      </d-row>
+      <d-row>
+        <d-col :span="cols">
           <d-form-item required
                        label="选择"
                        prop="age">
@@ -113,13 +113,13 @@
                       :options="[{label:'选项1',value:1}, {label:'选项2',value:2}]">
             </d-select>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item label="开关">
             <d-switch v-model="form.open"/>
           </d-form-item>
-        </ae-col>
-        <ae-col :span="cols">
+        </d-col>
+        <d-col :span="cols">
           <d-form-item required
                        label="选择2">
             <d-select clearable
@@ -132,15 +132,15 @@
               </d-select-option-group>
             </d-select>
           </d-form-item>
-        </ae-col>
-      </ae-row>
-      <ae-row>
-        <ae-col :span="cols">
+        </d-col>
+      </d-row>
+      <d-row>
+        <d-col :span="cols">
           <d-form-item>
             <d-button @click="submit">提交</d-button>
           </d-form-item>
-        </ae-col>
-      </ae-row>
+        </d-col>
+      </d-row>
     </d-form>
   </div>
 </template>

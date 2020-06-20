@@ -1,6 +1,4 @@
 // 导入颜色选择器组件
-import Global from './global';
-import HttpMethod from './http-method';
 import VueIcon from '@ant-design/icons-vue';
 import './moment-zh_CN';
 import AeCodemirror from './ae-codemirror';
@@ -9,7 +7,6 @@ import AeIcon from './ae-icon';
 import AeLayout from './ae-layout';
 import AeModal from './ae-modal';
 import AeTooltip from './ae-tooltip';
-import ApiProxy from './api-proxy';
 import CodemirrorDirective from './codemirror-directive';
 import DAnchor from './d-anchor';
 import DAutoComplete from './d-auto-complete';
@@ -112,15 +109,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 export {
   // 以下是具体的组件列表
-  Global,
-  HttpMethod,
   AeCodemirror,
 	AeGrid,
 	AeIcon,
 	AeLayout,
 	AeModal,
 	AeTooltip,
-	ApiProxy,
 	CodemirrorDirective,
 	DAnchor,
 	DAutoComplete,
@@ -160,15 +154,12 @@ export {
 export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
   install,
-  Global,
-  HttpMethod,
   AeCodemirror,
 	AeGrid,
 	AeIcon,
 	AeLayout,
 	AeModal,
 	AeTooltip,
-	ApiProxy,
 	CodemirrorDirective,
 	DAnchor,
 	DAutoComplete,

@@ -1,8 +1,8 @@
+import {Pagination} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import PureInputComponent from '../../../mixins/pure-input-component';
 import locale from '../../locale-provider/zh_CN';
-
 
 @Component({
   name: 'DPagination',
@@ -17,7 +17,7 @@ export default class DPagination extends PureInputComponent {
   public static install: (Vue) => void;
 
   public getInputComponent() {
-    return window.antd.Pagination;
+    return Pagination;
   }
 
   public getProps(): {} {

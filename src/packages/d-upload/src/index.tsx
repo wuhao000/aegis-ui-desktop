@@ -1,3 +1,4 @@
+import {Upload} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import localeProvider from '../../locale-provider/zh_CN';
@@ -14,7 +15,7 @@ export default class DUpload extends BaseFormComponent {
   public static install: (Vue) => void;
 
   public getInputComponent() {
-    return window.antd.Upload;
+    return Upload;
   }
 
 }

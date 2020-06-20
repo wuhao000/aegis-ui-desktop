@@ -1,7 +1,7 @@
+import {Tree} from 'ant-design-vue';
 import PureInputComponent from '../../../mixins/pure-input-component';
 import Component from 'vue-class-component';
 
-const Tree = window.antd.Tree;
 @Component({
   name: 'DTree',
   inheritAttrs: false

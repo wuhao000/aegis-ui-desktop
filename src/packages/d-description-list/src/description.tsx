@@ -22,6 +22,7 @@ class Description extends Vue {
       ...responsive[this.column],
       ...this.$attrs
     };
+    // @ts-ignore
     return <Col attrs={attrs}>
       {
         this.term && <div class={this.prefixCls + '-term'}>{term}</div>

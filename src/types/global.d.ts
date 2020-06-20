@@ -1,9 +1,7 @@
-import {AxiosRequestConfig} from 'axios';
 import {LoDashStatic} from 'lodash';
+import Moment from 'moment';
 import {DefaultComputed, DefaultData, DefaultMethods, DefaultProps, PropsDefinition} from 'vue/types/options';
 import {Vue} from 'vue/types/vue';
-import {API, ApiDef, ApiObject, AppConfig} from '../../types';
-import Moment from 'moment';
 
 
 export interface MessageOptions {
@@ -80,25 +78,21 @@ export interface MessageConfigOptions {
   top?: string;
 }
 
-export class Global {
-  static proxyAPI: (obj: ApiObject<ApiDef>, config: AppConfig, axiosConfig?: AxiosRequestConfig) => ApiObject<API>;
-}
-
 declare module 'vue/types/vue' {
 
   interface Vue {
-    $api: ApiObject<API>;
+    // @ts-ignore
     $message: Message;
   }
 }
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue,
-    Data = DefaultData<V>,
-    Methods = DefaultMethods<V>,
-    Computed = DefaultComputed,
-    PropsDef = PropsDefinition<DefaultProps>,
-    Props = DefaultProps> {
+      Data = DefaultData<V>,
+      Methods = DefaultMethods<V>,
+      Computed = DefaultComputed,
+      PropsDef = PropsDefinition<DefaultProps>,
+      Props = DefaultProps> {
     componentName?: string;
   }
 }

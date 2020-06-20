@@ -1,10 +1,10 @@
+import {Input} from 'ant-design-vue';
 import {VNode} from 'vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import BaseFormComponent from '../../../mixins/base-input-component';
 import hasProp, {hasListener} from '../../utils/props-util';
 
-const Input: any = window.antd.Input;
 @Component({
   name: 'DInput',
   inheritAttrs: false

@@ -1,4 +1,4 @@
-import Icon from './src';
+import Icon from './src/index.vue';
 
 const Plugin: any = Icon;
 Plugin.install = (Vue) => {

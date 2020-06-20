@@ -1,10 +1,10 @@
+import {DatePicker} from 'ant-design-vue';
 import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import BaseFormComponent from '../../../mixins/base-input-component';
 import RangePicker from './range-picker';
 
-const DatePicker = window.antd.DatePicker;
 @Component({
   name: 'DDatePicker'
 })
@@ -68,21 +68,28 @@ export default class DDatePicker extends BaseFormComponent {
     return {
       showTime: this.shouldShowTime,
       allowClear: this.$attrs.allowClear !== undefined ? this.$attrs.allowClear : this.clearable,
-      format: this.format
+      format: this.format,
+      mode: this.getMode()
     };
   }
 
+  public getMode() {
+    if (this.mode === 'date' || this.mode === 'datetime') {
+      return undefined;
+    }
+    return this.mode;
+  }
 
   @Watch('value')
   public valueChanged(value: any) {
     const convertValue = this.convertValue(value);
-    if (this['stateValue'] === null || this['stateValue'] === undefined) {
-      this['stateValue'] = convertValue;
+    if (this.stateValue === null || this.stateValue === undefined) {
+      this.stateValue = convertValue;
     } else if (!convertValue) {
-      this['stateValue'] = undefined;
+      this.stateValue = undefined;
     } else {
-      if (this['stateValue'].toString() !== convertValue.toString()) {
-        this['stateValue'] = convertValue;
+      if (this.stateValue.toString() !== convertValue.toString()) {
+        this.stateValue = convertValue;
       }
     }
   }

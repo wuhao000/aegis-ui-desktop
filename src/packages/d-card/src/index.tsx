@@ -1,3 +1,4 @@
+import {Card} from 'ant-design-vue';
 import ProxyComponent from '../../../mixins/proxy-component';
 import Component from 'vue-class-component';
 
@@ -11,7 +12,7 @@ export default class DCard extends ProxyComponent {
   public static install: (Vue) => void;
 
   public getInputComponent() {
-    return window.antd.Card;
+    return Card;
   }
 
 }

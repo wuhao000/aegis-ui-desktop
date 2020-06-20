@@ -1,7 +1,6 @@
+import {Menu} from 'ant-design-vue';
 import Vue from 'vue';
 import Component from 'vue-class-component';
-
-const Menu = window.antd.Menu;
 
 @Component({
   name: 'Wrapper'

@@ -1,9 +1,8 @@
+import {Transfer} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import localeProvider from '../../locale-provider/zh_CN';
 import BaseFormComponent from '../../../mixins/base-input-component';
-
-const Transfer = window.antd.Transfer;
 
 @Component({
   name: 'DTransfer',

@@ -1,3 +1,4 @@
+import {Table} from 'ant-design-vue';
 import {VNode} from 'vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
@@ -5,7 +6,6 @@ import {TableColumn} from '../../../../types/components/d-table';
 import ProxyComponent from '../../../mixins/proxy-component';
 import Empty from '../../d-empty';
 import localeProvider from '../../locale-provider/zh_CN';
-
 
 @Component({
   name: 'DTable'
@@ -29,7 +29,7 @@ export default class DTable extends ProxyComponent {
   public columns: TableColumn[];
 
   public getInputComponent() {
-    return window.antd.Table;
+    return Table;
   }
 
   get cssClass(): {} {

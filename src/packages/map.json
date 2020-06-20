@@ -35,11 +35,6 @@
     "name": "ae-tooltip",
     "chineseName": "提示"
   },
-  "api-proxy": {
-    "type": "tool",
-    "name": "api-proxy",
-    "chineseName": "接口代理工具"
-  },
   "codemirror-directive": {
     "name": "codemirror",
     "chineseName": "代码展示",

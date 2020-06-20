@@ -8,9 +8,8 @@ import DButton from '../d-button';
 import DForm from '../d-form';
 import DInput from '../d-input';
 import AeModal from './src';
-
+import {Modal} from 'ant-design-vue';
 Vue.use(plugin);
-const Modal = window.antd.Modal;
 const defaultConfirmOptions: ModalOptions = {
   centered: true,
   okText: '确认',
@@ -31,10 +30,10 @@ class PromptInput extends BaseInputComponent {
   public render(this: any) {
     // @ts-ignore
     return <DForm
-      props={{
-        model: {inputValue: this.currentValue},
-        rules: {inputValue: this.rules}
-      }}>
+        props={{
+          model: {inputValue: this.currentValue},
+          rules: {inputValue: this.rules}
+        }}>
       <DForm.Item prop={'inputValue'}>
         {
           // @ts-ignore
@@ -52,24 +51,23 @@ class PromptInput extends BaseInputComponent {
 
 function createPromptContent(copyOptions: {} & ModalOptions, onChange?) {
   const rules = (copyOptions.rules || []).concat(
-    copyOptions.required ? [{required: true, message: '必须输入', trigger: 'change'}] : []
+      copyOptions.required ? [{required: true, message: '必须输入', trigger: 'change'}] : []
   );
   const h = new Vue().$createElement;
   // @ts-ignore
-  return <PromptInput
-    rules={rules}
-    onInput={(value) => {
-      if (onChange) {
-        onChange(value);
-      }
-    }}
-    value={copyOptions.inputValue}/>;
+  return <PromptInput rules={rules}
+                      onInput={(value) => {
+                        if (onChange) {
+                          onChange(value);
+                        }
+                      }}
+                      value={copyOptions.inputValue}/>;
 }
 
 type Type = 'confirm' | 'alert' | 'info' | 'success' | 'error' | 'warning' | 'prompt';
 
 function createModal(message: string | ModalOptions, title: string, icon: string, options: ModalOptions, type: Type) {
-  const copyOptions = typeof message === 'object' ? Object.assign({}, defaultConfirmOptions, message) : (options || Object.assign({}, defaultConfirmOptions));
+  const copyOptions: any = typeof message === 'object' ? Object.assign({}, defaultConfirmOptions, message) : (options || Object.assign({}, defaultConfirmOptions));
   if (typeof message === 'string') {
     copyOptions.content = message;
     if (title) {

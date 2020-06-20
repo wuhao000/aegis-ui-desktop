@@ -1,13 +1,14 @@
+import {Col as ACol, Row as ARow} from 'ant-design-vue';
 import './style';
 
 export default {
   install(Vue) {
-    Vue.component('AeRow', window.antd.Row);
-    Vue.component('AeCol', window.antd.Col);
-    Vue.component('DRow', window.antd.Row);
-    Vue.component('DCol', window.antd.Col);
+    Vue.component('AeRow', ARow);
+    Vue.component('AeCol', ACol);
+    Vue.component('DRow', ARow);
+    Vue.component('DCol', ACol);
   }
 };
 
-export const Col = window.antd.Col;
-export const Row = window.antd.Row;
+export const Col = ACol;
+export const Row = ARow as any;

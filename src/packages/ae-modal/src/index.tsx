@@ -1,9 +1,9 @@
+import {Modal} from 'ant-design-vue';
 import {VNodeData} from 'vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import {AeAlert, AePrompt, ModalOptions} from '../../../../types/components/ae-modal';
 import BaseFormComponent from '../../../mixins/base-input-component';
-
 
 @Component({
   name: 'AeModal',
@@ -30,7 +30,7 @@ export default class DCascader extends BaseFormComponent {
   public static prompt: AePrompt;
 
   public getInputComponent() {
-    return window.antd.Modal;
+    return Modal;
   }
 
   public getInitValue(): any {

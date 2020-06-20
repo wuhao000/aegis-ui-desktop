@@ -216,8 +216,7 @@ export default class DForm extends Vue {
         }
         {
           // @ts-ignore
-          <DButton
-              onClick={(e) => {
+          <DButton onClick={(e) => {
                 this.$emit('ok', e);
               }}
               type={'primary'}

@@ -1,3 +1,4 @@
+import {Switch} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 
@@ -9,7 +10,7 @@ import BaseFormComponent from '../../../mixins/base-input-component';
 export default class DSwitch extends BaseFormComponent {
 
   public getInputComponent() {
-    return window.antd.Switch;
+    return Switch;
   }
 
   public getInitValue(): boolean {

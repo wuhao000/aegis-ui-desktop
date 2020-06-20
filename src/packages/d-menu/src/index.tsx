@@ -1,7 +1,6 @@
+import {Menu} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
-
-const Menu = window.antd.Menu;
 
 @Component({
   name: 'DMenu',

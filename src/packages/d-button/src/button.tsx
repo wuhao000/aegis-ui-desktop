@@ -1,3 +1,4 @@
+import {Button} from 'ant-design-vue';
 import Component, {mixins} from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import {FormComponent} from '../../../mixins/form-component';
@@ -38,10 +39,10 @@ class AButton extends mixins(FormComponent, ProxyComponent) {
   }
 
   public getInputComponent(): {} {
-    return window.antd.Button;
+    return Button;
   }
 
 }
 
-AButton.Group = window.antd.Button.Group;
+AButton.Group = Button.Group;
 export default AButton;

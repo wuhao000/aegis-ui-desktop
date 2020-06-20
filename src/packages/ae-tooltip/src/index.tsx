@@ -1,7 +1,7 @@
+import {Tooltip} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import ProxyComponent from '../../../mixins/proxy-component';
 
-const Tooltip = window.antd.Tooltip;
 
 @Component({
   name: 'DTooltip',

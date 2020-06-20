@@ -1,9 +1,9 @@
+import {DatePicker} from 'ant-design-vue';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import locale from 'ant-design-vue/lib/date-picker/locale/zh_CN';
 
-const DatePicker = window.antd.DatePicker;
 @Component({
   name: 'DDatePicker'
 })
@@ -88,6 +88,7 @@ export default class DDatePicker extends Vue {
 
   public render() {
     const value = moment();
+    // @ts-ignore
     return <DatePicker value={value}
                        showTime={this.shouldShowTime}/>;
   }

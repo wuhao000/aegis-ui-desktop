@@ -58,7 +58,8 @@ if (moment) {
       sameElse: 'L'
     },
     dayOfMonthOrdinalParse: /\d{1,2}(日|月|周)/,
-    ordinal(number, period) {
+    ordinal(number: number) {
+      const period = arguments[1];
       switch (period) {
         case 'd':
         case 'D':

@@ -1,10 +1,10 @@
+import {Form} from 'ant-design-vue';
 import AsyncValidator, {ValidateRule, ValidateRules} from 'async-validator';
 import debounce from 'lodash.debounce';
 import Vue from 'vue';
 import Emitter from '../../../mixins/emitter';
 import {getPropByPath, noop} from './utils';
 
-const Form = window.antd.Form;
 
 export default Vue.extend({
   name: 'DFormItem',
@@ -21,7 +21,9 @@ export default Vue.extend({
     validateStatus: {type: String},
     help: {type: String}
   },
-  inject: ['form'],
+  inject: {
+    form: {from: 'form', default: () => undefined}
+  },
   provide() {
     return {
       formItem: this
@@ -207,8 +209,8 @@ export default Vue.extend({
     props.labelCol = this.labelCol;
     props.validateStatus = this.validateStatus || this.currentValidateStatus;
     props.wrapperCol = this.wrapperCol;
-    return <Form.Item props={props}
-                      attrs={this.$attrs}>
+    // @ts-ignore
+    return <Form.Item props={props} attrs={this.$attrs}>
       {this.$slots.default}
     </Form.Item>;
   }

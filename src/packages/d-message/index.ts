@@ -1,5 +1,6 @@
-const message = window.antd.message;
+import {message} from 'ant-design-vue';
 
+// @ts-ignore
 message.install = (vue) => {
   Object.defineProperties(vue.prototype, {
     $message: {
@@ -10,4 +11,4 @@ message.install = (vue) => {
   });
 };
 
-export default message;
+export default message as any;

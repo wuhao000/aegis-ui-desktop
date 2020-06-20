@@ -1,3 +1,4 @@
+import {Tag} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import ProxyComponent from '../../../mixins/proxy-component';
@@ -54,7 +55,7 @@ export default class DTag extends ProxyComponent {
   }
 
   public getInputComponent() {
-    return window.antd.Tag;
+    return Tag;
   }
 
 }

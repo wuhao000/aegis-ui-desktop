@@ -1,19 +1,19 @@
 {
   "name": "aegis-ui-desktop",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "基于 Vue 私用组件库, 扩展自ant-design-vue",
   "main": "src/packages/index.ts",
   "keyword": "aegisUI aegis-UI aegisui aegis-UI",
   "private": false,
   "scripts": {
-    "create": "node node_modules/aegis-ui-tools/src/create.js && npm run docs",
-    "docs": "node node_modules/aegis-ui-tools/src/check.js && node node_modules/aegis-ui-tools/src/def.js && node node_modules/aegis-ui-tools/src/docs.js",
+    "create": "node node_modules/aegis-ui-tools/dist/create.js && npm run docs",
+    "docs": "node node_modules/aegis-ui-tools/dist/check.js && node node_modules/aegis-ui-tools/dist/def.js && node node_modules/aegis-ui-tools/dist/docs.js",
     "dev": "npm run docs && vue-cli-service serve",
     "build": "npm run docs && vue-cli-service build",
     "api": "generate-api",
     "lint": "vue-cli-service lint",
     "lib": "npm run docs && vue-cli-service build --target lib --name aegis --dest lib src/packages/index.ts",
-    "remove": "node node_modules/aegis-ui-tools/src/remove.js && npm run docs",
+    "remove": "node node_modules/aegis-ui-tools/dist/remove.js && npm run docs",
     "publish": "npm run docs"
   },
   "repository": "https://github.com/wuhao000/aegis-ui-desktop.git",
@@ -31,11 +31,10 @@
     }
   },
   "dependencies": {
-    "@ant-design/icons": "^1.2.1",
-    "@ant-design/icons-vue": "^1.0.1",
+    "@ant-design/icons-vue": "^2.0.0",
     "@types/axios": "^0.14.0",
     "aegis-ui-tools": "^1.0.4",
-    "ant-design-vue": "^1.3.13",
+    "ant-design-vue": "^1.6.2",
     "async-validator": "^1.11.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-polyfill": "^6.26.0",
@@ -79,6 +78,7 @@
     "warning": "^4.0.3"
   },
   "devDependencies": {
+    "@ant-design/icons": "^2.1.1",
     "@types/classnames": "^2.2.7",
     "@types/codemirror": "0.0.72",
     "@types/highlight.js": "^9.12.3",

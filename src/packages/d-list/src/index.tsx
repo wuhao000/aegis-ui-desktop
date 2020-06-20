@@ -1,10 +1,9 @@
+import {List} from 'ant-design-vue';
 import {VNode} from 'vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import ProxyComponent from '../../../mixins/proxy-component';
 import Empty from '../../d-empty';
-
-const List = window.antd.List;
 
 @Component({
   name: 'DList',

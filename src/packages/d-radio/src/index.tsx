@@ -1,8 +1,8 @@
+import {Radio} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 import Group from './radio-group';
 
-const Radio = window.antd.Radio;
 
 @Component({
   name: 'DRadioButon',

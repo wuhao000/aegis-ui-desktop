@@ -33,6 +33,7 @@
   </a-checkbox-group>
 </template>
 <script lang="tsx">
+  import {Checkbox} from 'ant-design-vue';
   import Component from 'vue-class-component';
   import {mixins} from 'vue-class-component/lib/util';
   import {Prop, Watch} from 'vue-property-decorator';
@@ -42,9 +43,9 @@
   @Component({
     name: 'DCheckboxGroup',
     components: {
-      ACheckboxGroup: window.antd.Checkbox.Group,
+      ACheckboxGroup: Checkbox.Group,
       DCheckboxButton: Button,
-      ACheckbox: window.antd.Checkbox
+      ACheckbox: Checkbox
     }
   })
   export default class DCheckboxGroup extends mixins(OptionsBasedComponent) {

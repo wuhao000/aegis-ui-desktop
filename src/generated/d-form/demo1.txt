@@ -8,7 +8,8 @@
               layout="horizontal"
               @cancel="$message.error('cancel clicked')"
               @ok="$message.success('ok clicked')">
-        <d-form-item has-feedback help="出错了"
+        <d-form-item has-feedback
+                     help="出错了"
                      label="标题"
                      validate-status="error">
           <d-input/>

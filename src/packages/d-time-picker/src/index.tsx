@@ -3,6 +3,7 @@ import {Prop} from 'vue-property-decorator';
 import localeProvider from '../../locale-provider/zh_CN';
 import BaseFormComponent from '../../../mixins/base-input-component';
 
+import {TimePicker} from 'ant-design-vue';
 
 @Component({
   name: 'DTimePicker',
@@ -17,7 +18,7 @@ export default class DTimePicker extends BaseFormComponent {
   public placeholder: string;
 
   public getInputComponent() {
-    return window.antd.TimePicker;
+    return TimePicker;
   }
 
 }

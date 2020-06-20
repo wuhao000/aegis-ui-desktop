@@ -1,3 +1,4 @@
+import {Rate} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 
@@ -11,7 +12,7 @@ export default class DRate extends BaseFormComponent {
   public static install: (Vue) => void;
 
   public getInputComponent() {
-    return window.antd.Rate;
+    return Rate;
   }
 
 }

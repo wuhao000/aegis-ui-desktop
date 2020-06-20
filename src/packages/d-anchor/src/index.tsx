@@ -1,7 +1,7 @@
+import {Anchor} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import ProxyComponent from '../../../mixins/proxy-component';
 
-const Anchor = window.antd.Anchor;
 
 @Component({
   name: 'DAnchor',

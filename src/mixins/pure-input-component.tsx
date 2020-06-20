@@ -6,10 +6,7 @@ import hasProp, {hasListener} from '../packages/utils/props-util';
 import Emitter from './emitter';
 
 function isArrayEmpty(array: any[]) {
-  if (array === null || array === undefined || array.length === 0 || array.filter(it => it !== null && it !== undefined).length === 0) {
-    return true;
-  }
-  return true;
+  return array === null || array === undefined || array.length === 0 || array.filter(it => it !== null && it !== undefined).length === 0;
 }
 
 @Component({
@@ -170,12 +167,11 @@ export default class PureInputComponent extends mixins(Emitter) {
   }
 
   public getValue() {
-    if (Array.isArray(this.stateValue)) {
-      if (isArrayEmpty(this.stateValue)) {
-        return [];
-      }
+    const stateValue = this.stateValue;
+    if (Array.isArray(stateValue) && isArrayEmpty(stateValue)) {
+      return [];
     }
-    return this.stateValue;
+    return stateValue;
   }
 
   public render() {

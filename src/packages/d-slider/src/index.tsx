@@ -1,3 +1,4 @@
+import {Slider} from 'ant-design-vue';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 
@@ -15,7 +16,7 @@ export default class DSlider extends BaseFormComponent {
   }
 
   public getInputComponent() {
-    return window.antd.Slider;
+    return Slider;
   }
 
 }
