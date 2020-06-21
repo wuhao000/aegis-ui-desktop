@@ -2,7 +2,7 @@ import Button from './src/button';
 import Group from './src/group.vue';
 import './style';
 
-import {Checkbox} from 'ant-design-vue';
+import {Checkbox} from '../antd';
 
 // @ts-ignore
 Checkbox.Button = Button;

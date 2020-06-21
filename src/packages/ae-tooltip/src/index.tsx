@@ -1,4 +1,4 @@
-import {Tooltip} from 'ant-design-vue';
+import {Tooltip} from '../../antd';
 import Component from 'vue-class-component';
 import ProxyComponent from '../../../mixins/proxy-component';
 

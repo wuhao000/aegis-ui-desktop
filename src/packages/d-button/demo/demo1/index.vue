@@ -55,6 +55,14 @@
                 icon="file-text">查看
       </d-button>
     </div>
+    <div>
+      <a-button icon="edit">修改
+      </a-button>
+      <a-button icon="delete">删除
+      </a-button>
+      <a-button icon="file-text">查看
+      </a-button>
+    </div>
   </div>
 </template>
 <script lang="ts">

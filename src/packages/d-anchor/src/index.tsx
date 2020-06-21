@@ -1,4 +1,4 @@
-import {Anchor} from 'ant-design-vue';
+import {Anchor} from '../../antd';
 import Component from 'vue-class-component';
 import ProxyComponent from '../../../mixins/proxy-component';
 

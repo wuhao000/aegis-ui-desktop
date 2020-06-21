@@ -1,4 +1,4 @@
-import {Transfer} from 'ant-design-vue';
+import {Transfer} from '../../antd';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import localeProvider from '../../locale-provider/zh_CN';

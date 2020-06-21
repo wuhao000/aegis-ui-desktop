@@ -33,7 +33,7 @@
   </a-checkbox-group>
 </template>
 <script lang="tsx">
-  import {Checkbox} from 'ant-design-vue';
+  import {Checkbox} from '../../antd';
   import Component from 'vue-class-component';
   import {mixins} from 'vue-class-component/lib/util';
   import {Prop, Watch} from 'vue-property-decorator';

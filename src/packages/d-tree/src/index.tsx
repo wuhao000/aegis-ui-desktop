@@ -1,4 +1,4 @@
-import {Tree} from 'ant-design-vue';
+import {Tree} from '../../antd';
 import PureInputComponent from '../../../mixins/pure-input-component';
 import Component from 'vue-class-component';
 

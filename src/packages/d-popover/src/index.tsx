@@ -1,4 +1,4 @@
-import {Popover} from 'ant-design-vue';
+import {Popover} from '../../antd';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 

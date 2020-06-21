@@ -3,7 +3,7 @@ import {Prop} from 'vue-property-decorator';
 import localeProvider from '../../locale-provider/zh_CN';
 import BaseFormComponent from '../../../mixins/base-input-component';
 
-import {TimePicker} from 'ant-design-vue';
+import {TimePicker} from '../../antd';
 
 @Component({
   name: 'DTimePicker',

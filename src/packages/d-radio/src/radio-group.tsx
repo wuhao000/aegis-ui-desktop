@@ -2,7 +2,7 @@ import Component from 'vue-class-component';
 import {mixins} from 'vue-class-component/lib/util';
 import {Prop} from 'vue-property-decorator';
 import OptionsBasedComponent from '../../../mixins/options-based-component';
-import { Radio } from 'ant-design-vue';
+import { Radio } from '../../antd';
 
 
 @Component({

@@ -1,4 +1,4 @@
-import {Form} from 'ant-design-vue';
+import {Form} from '../../antd';
 import AsyncValidator, {ValidateRule, ValidateRules} from 'async-validator';
 import debounce from 'lodash.debounce';
 import Vue from 'vue';

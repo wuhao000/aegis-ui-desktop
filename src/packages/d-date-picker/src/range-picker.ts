@@ -1,4 +1,4 @@
-import {DatePicker} from 'ant-design-vue';
+import {DatePicker} from '../../antd';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';
 import BaseFormComponent from '../../../mixins/base-input-component';

@@ -1,4 +1,4 @@
-import {Divider} from 'ant-design-vue';
+import {Divider} from '../../antd';
 import ProxyComponent from '../../../mixins/proxy-component';
 import Component from 'vue-class-component';
 

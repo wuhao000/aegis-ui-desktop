@@ -1,6 +1,7 @@
 // 导入颜色选择器组件
 import VueIcon from '@ant-design/icons-vue';
 import './moment-zh_CN';
+import Vue from 'vue';
 import AeCodemirror from './ae-codemirror';
 import AeGrid from './ae-grid';
 import AeIcon from './ae-icon';
@@ -49,6 +50,9 @@ if (window.AntDesignIcons) {
   Object.keys(icons).forEach(icon => {
     VueIcon.add(icons[icon]);
   });
+}
+if (window.antd) {
+  Vue.use(window.antd);
 }
 // 存储组件列表
 const components = [

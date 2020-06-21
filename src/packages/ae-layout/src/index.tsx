@@ -1,7 +1,7 @@
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import ProxyComponent from '../../../mixins/proxy-component';
-import {Layout} from 'ant-design-vue';
+import {Layout} from '../../antd';
 
 @Component({
   name: 'DLayoutSider',

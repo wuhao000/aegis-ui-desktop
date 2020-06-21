@@ -1,4 +1,4 @@
-import {Rate} from 'ant-design-vue';
+import {Rate} from '../../antd';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 

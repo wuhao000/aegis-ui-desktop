@@ -1,4 +1,4 @@
-import {Cascader} from 'ant-design-vue';
+import {Cascader} from '../../antd';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import BaseFormComponent from '../../../mixins/base-input-component';

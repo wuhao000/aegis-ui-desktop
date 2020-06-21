@@ -1,4 +1,4 @@
-import {Switch} from 'ant-design-vue';
+import {Switch} from '../../antd';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 

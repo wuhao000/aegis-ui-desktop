@@ -1,4 +1,4 @@
-import {Col as ACol, Row as ARow} from 'ant-design-vue';
+import {Col as ACol, Row as ARow} from '../antd';
 import './style';
 
 export default {

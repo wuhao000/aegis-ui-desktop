@@ -8,7 +8,7 @@ import DButton from '../d-button';
 import DForm from '../d-form';
 import DInput from '../d-input';
 import AeModal from './src';
-import {Modal} from 'ant-design-vue';
+import {Modal} from '../antd';
 Vue.use(plugin);
 const defaultConfirmOptions: ModalOptions = {
   centered: true,

@@ -1,4 +1,4 @@
-import {Upload} from 'ant-design-vue';
+import {Upload} from '../../antd';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import localeProvider from '../../locale-provider/zh_CN';

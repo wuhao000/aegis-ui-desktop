@@ -1,4 +1,4 @@
-import {AutoComplete} from 'ant-design-vue';
+import {AutoComplete} from '../../antd';
 import Component from 'vue-class-component';
 import BaseFormComponent from '../../../mixins/base-input-component';
 

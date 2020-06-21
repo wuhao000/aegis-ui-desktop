@@ -1,7 +1,8 @@
 <template>
   <d-form label-width="180px">
-    <!--    <a-select :options="createOptions(5000)"></a-select>-->
-    <!--    <a-select :options="createOptions(5000, true)"></a-select>-->
+    <a-select :options="createOptions(1000)"></a-select>
+    <a-select :options="createOptions(1000, true)"></a-select>
+    <d-select/>
     <!--    <d-form-item label="可清除的">-->
     <!--      <d-select clearable-->
     <!--                v-model="value1"-->

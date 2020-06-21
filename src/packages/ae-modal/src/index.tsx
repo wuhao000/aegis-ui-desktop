@@ -1,4 +1,4 @@
-import {Modal} from 'ant-design-vue';
+import {Modal} from '../../antd';
 import {VNodeData} from 'vue';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
@@ -60,6 +60,7 @@ export default class DCascader extends BaseFormComponent {
         staticStyle: this.hideOk ? hideStyle : {}
       } as VNodeData
     };
+    props.visible = this.stateValue;
     if (noCustomFooter && this.hideOk && this.hideCancel) {
       props.footer = '';
     }

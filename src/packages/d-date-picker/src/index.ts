@@ -1,4 +1,4 @@
-import {DatePicker} from 'ant-design-vue';
+import {DatePicker} from '../../antd';
 import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 import Component from 'vue-class-component';
 import {Prop, Watch} from 'vue-property-decorator';

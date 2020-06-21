@@ -1,4 +1,4 @@
-import {Menu} from 'ant-design-vue';
+import {Menu} from '../../../antd';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 

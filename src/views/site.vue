@@ -11,7 +11,9 @@
           <nav-list :menu-list="routersName"></nav-list>
         </ae-layout-sider>
         <ae-layout-content :id="(!$route.meta || $route.meta.hideNav !== true) ? 'app-content' : ''">
-          <router-view/>
+          <d-input v-model="text1"/>
+          <d-textarea v-model="text2"/>
+<!--          <router-view/>-->
         </ae-layout-content>
       </ae-layout>
     </ae-layout>
@@ -36,6 +38,8 @@
   })
   export default class App extends Vue {
 
+    public text1 = '';
+    public text2 = '';
     get isDemo() {
       return this.$route.path.startsWith('/demo');
     }

@@ -1,4 +1,4 @@
-import {Button} from 'ant-design-vue';
+import {Button} from '../../antd';
 import Component, {mixins} from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import {FormComponent} from '../../../mixins/form-component';

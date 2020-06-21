@@ -1,4 +1,4 @@
-import {Pagination} from 'ant-design-vue';
+import {Pagination} from '../../antd';
 import Component from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import PureInputComponent from '../../../mixins/pure-input-component';

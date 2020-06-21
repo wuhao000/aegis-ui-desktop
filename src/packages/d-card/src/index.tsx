@@ -1,4 +1,4 @@
-import {Card} from 'ant-design-vue';
+import {Card} from '../../antd';
 import ProxyComponent from '../../../mixins/proxy-component';
 import Component from 'vue-class-component';
 
