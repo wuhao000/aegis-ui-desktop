@@ -1,0 +1,18 @@
+import ProxyComponent from '../../../mixins/proxy-component';
+import Component from 'vue-class-component';
+import {{{{className}}}} from '../antd';
+
+
+@Component({
+  name: '{{{componentClassName}}}',
+  inheritAttrs: false
+})
+export default class {{{componentClassName}}} extends ProxyComponent {
+
+  public static install: (Vue) => void;
+
+  public getInputComponent() {
+    return {{{className}}};
+  }
+
+}

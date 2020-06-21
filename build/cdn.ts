@@ -1,3 +1,5 @@
+
+// @ts-ignore
 import ObsClient from 'esdk-obs-nodejs-new';
 import fs from 'fs';
 

@@ -11,7 +11,7 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 api.config.js
-
+obs.json
 # Editor directories and files
 .idea
 .vscode
@@ -21,4 +21,4 @@ api.config.js
 *.sln
 *.sw*
 *.iml
-obs.json
+dist/

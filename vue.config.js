@@ -45,6 +45,7 @@ module.exports = {
         })
     );
     config.externals = {
+      'ant-design-vue': 'antd',
       'vue': 'Vue',
       'axios': 'axios',
       'core-js': 'CoreJS'
@@ -60,6 +61,7 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.alias
+        .set('@ant-design/icons/lib/dist', resolve('src/icons.ts'))
         .set('@', resolve('src'))
         .set('_p', resolve('packages'))
         .set('_t', resolve('types'));
