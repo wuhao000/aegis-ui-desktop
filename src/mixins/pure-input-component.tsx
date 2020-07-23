@@ -159,6 +159,8 @@ export default class PureInputComponent extends mixins(Emitter) {
     let val = value;
     if (value && value.toString() === '[object InputEvent]') {
       val = value.target.value;
+    } else if (value && value.toString() === '[object Event]') {
+      return;
     }
     this.$emit('input', val);
     if (!(hasProp(this, 'value') && hasListener(this, 'input'))) {
@@ -178,12 +180,12 @@ export default class PureInputComponent extends mixins(Emitter) {
     const CustomComponent = this.getInputComponent();
     // @ts-ignore
     return <CustomComponent
-        attrs={this.props}
-        value={this.getValue()}
-        scopedSlots={this.$scopedSlots}
-        slots={this.slots}
-        on={this.listeners}
-        style={this.cssStyle}>
+      attrs={this.props}
+      value={this.getValue()}
+      scopedSlots={this.$scopedSlots}
+      slots={this.slots}
+      on={this.listeners}
+      style={this.cssStyle}>
       {this.getDefaultSlot()}
     </CustomComponent>;
   }
